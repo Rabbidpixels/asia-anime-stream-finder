@@ -98,7 +98,8 @@ function generatePlaceholderPlatforms(title: string): StreamingPlatform[] {
 async function searchJikanAPI(query: string): Promise<AnimeSearchResult> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_JIKAN_API_URL || 'https://api.jikan.moe/v4';
-    const url = `${apiUrl}/anime?q=${encodeURIComponent(query)}&limit=12`;
+    // Filter to only show main anime titles (TV, Movie, OVA, Special, ONA) - excludes individual episodes
+    const url = `${apiUrl}/anime?q=${encodeURIComponent(query)}&type=tv,movie,ova,special,ona&limit=12&sfw=true`;
 
     const response = await rateLimitedFetch(url);
 
