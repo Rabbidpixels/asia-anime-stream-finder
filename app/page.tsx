@@ -1,13 +1,11 @@
 import Banner from '@/components/Banner';
-import SearchArea from '@/components/SearchArea';
-import ResultsGrid from '@/components/ResultsGrid';
+import AnimeSearch from '@/components/AnimeSearch';
 
 export default function HomePage() {
   return (
     <>
       <Banner />
-      <SearchArea />
-      <ResultsGrid />
+      <AnimeSearch />
     </>
   );
 }

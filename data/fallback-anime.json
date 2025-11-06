@@ -1,0 +1,279 @@
+{
+  "anime": [
+    {
+      "id": 1,
+      "title": "Attack on Titan",
+      "titleJapanese": "Shingeki no Kyojin",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+      "synopsis": "Humans are nearly exterminated by giant creatures called Titans. Titans are typically several stories tall, seem to have no intelligence, devour human beings and, worst of all, seem to do it for the pleasure rather than as a food source.",
+      "rating": 8.54,
+      "episodes": 25,
+      "status": "Finished Airing",
+      "year": 2013,
+      "genres": ["Action", "Drama", "Fantasy", "Mystery"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US", "JP"]
+        },
+        {
+          "name": "Funimation",
+          "url": "https://www.funimation.com",
+          "regions": ["US", "CA", "GB", "BR"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese"]
+    },
+    {
+      "id": 2,
+      "title": "Demon Slayer: Kimetsu no Yaiba",
+      "titleJapanese": "Kimetsu no Yaiba",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+      "synopsis": "Ever since the death of his father, the burden of supporting the family has fallen upon Tanjirou Kamado's shoulders. Though living impoverished on a remote mountain, the Kamado family are able to enjoy a relatively peaceful and happy life.",
+      "rating": 8.52,
+      "episodes": 26,
+      "status": "Finished Airing",
+      "year": 2019,
+      "genres": ["Action", "Fantasy", "Supernatural"],
+      "streamingPlatforms": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com",
+          "regions": ["US", "CA", "GB", "EU", "JP", "BR", "IN"]
+        },
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese", "Hindi"]
+    },
+    {
+      "id": 3,
+      "title": "My Hero Academia",
+      "titleJapanese": "Boku no Hero Academia",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/78745.jpg",
+      "synopsis": "The appearance of 'quirks', newly discovered super powers, has been steadily increasing over the years, with 80 percent of humanity possessing various abilities from manipulation of elements to shapeshifting.",
+      "rating": 7.89,
+      "episodes": 13,
+      "status": "Finished Airing",
+      "year": 2016,
+      "genres": ["Action", "Comedy", "School", "Shounen"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US"]
+        },
+        {
+          "name": "Funimation",
+          "url": "https://www.funimation.com",
+          "regions": ["US", "CA", "GB", "BR"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese"]
+    },
+    {
+      "id": 4,
+      "title": "One Piece",
+      "titleJapanese": "One Piece",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
+      "synopsis": "Gol D. Roger was known as the Pirate King, the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world.",
+      "rating": 8.69,
+      "episodes": 1000,
+      "status": "Currently Airing",
+      "year": 1999,
+      "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Shounen"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com",
+          "regions": ["US", "CA", "GB", "EU", "JP", "BR", "IN"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese", "Hindi", "Korean", "Chinese"]
+    },
+    {
+      "id": 5,
+      "title": "Naruto",
+      "titleJapanese": "Naruto",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
+      "synopsis": "Moments prior to Naruto Uzumaki's birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc.",
+      "rating": 7.99,
+      "episodes": 220,
+      "status": "Finished Airing",
+      "year": 2002,
+      "genres": ["Action", "Adventure", "Comedy", "Martial Arts", "Shounen"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com",
+          "regions": ["US", "CA", "GB", "EU", "JP", "BR", "IN"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese", "Hindi", "Korean"]
+    },
+    {
+      "id": 6,
+      "title": "Jujutsu Kaisen",
+      "titleJapanese": "Jujutsu Kaisen",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+      "synopsis": "Idly indulging in baseless paranormal activities with the Occult Club, high schooler Yuuji Itadori spends his days at either the clubroom or the hospital, where he visits his bedridden grandfather.",
+      "rating": 8.65,
+      "episodes": 24,
+      "status": "Finished Airing",
+      "year": 2020,
+      "genres": ["Action", "Fantasy", "School", "Shounen", "Supernatural"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "regions": ["US"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese"]
+    },
+    {
+      "id": 7,
+      "title": "Spy x Family",
+      "titleJapanese": "Spy x Family",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1441/122795.jpg",
+      "synopsis": "For the agent known as 'Twilight', no order is too tall if it is for the sake of peace. Operating as Westalis' master spy, Twilight works tirelessly to prevent extremists from sparking a war with neighboring country Ostania.",
+      "rating": 8.61,
+      "episodes": 12,
+      "status": "Finished Airing",
+      "year": 2022,
+      "genres": ["Action", "Comedy", "Slice of Life"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese", "Hindi"]
+    },
+    {
+      "id": 8,
+      "title": "Death Note",
+      "titleJapanese": "Death Note",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/9453.jpg",
+      "synopsis": "A shinigami, as a god of death, can kill any person—provided they see their victim's face and write their victim's name in a notebook called a Death Note.",
+      "rating": 8.62,
+      "episodes": 37,
+      "status": "Finished Airing",
+      "year": 2006,
+      "genres": ["Mystery", "Psychological", "Supernatural", "Thriller"],
+      "streamingPlatforms": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com",
+          "regions": ["US", "CA", "GB", "EU", "JP", "BR", "IN", "KR"]
+        },
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese", "Hindi", "Korean", "Chinese"]
+    },
+    {
+      "id": 9,
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "titleJapanese": "Hagane no Renkinjutsushi: Fullmetal Alchemist",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1223/96541.jpg",
+      "synopsis": "After a horrific alchemy experiment goes wrong in the Elric household, brothers Edward and Alphonse are left in a catastrophic new reality.",
+      "rating": 9.09,
+      "episodes": 64,
+      "status": "Finished Airing",
+      "year": 2009,
+      "genres": ["Action", "Adventure", "Drama", "Fantasy"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com",
+          "regions": ["US", "CA", "GB", "EU", "JP", "BR", "IN"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese", "Hindi"]
+    },
+    {
+      "id": 10,
+      "title": "Chainsaw Man",
+      "titleJapanese": "Chainsaw Man",
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1806/126216.jpg",
+      "synopsis": "Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts.",
+      "rating": 8.59,
+      "episodes": 12,
+      "status": "Finished Airing",
+      "year": 2022,
+      "genres": ["Action", "Fantasy", "Supernatural"],
+      "streamingPlatforms": [
+        {
+          "name": "Crunchyroll",
+          "url": "https://www.crunchyroll.com",
+          "regions": ["US", "CA", "GB", "EU"]
+        },
+        {
+          "name": "Hulu",
+          "url": "https://www.hulu.com",
+          "regions": ["US"]
+        }
+      ],
+      "languages": ["Japanese", "English", "Spanish", "Portuguese"]
+    }
+  ]
+}
