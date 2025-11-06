@@ -43,97 +43,62 @@ export default function ResultsGrid({
           </div>
         )}
 
-        {/* Results Grid */}
+        {/* Results Grid - Compact Tile Layout */}
         {!loading && !error && results.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             {results.map((anime, index) => (
               <div
                 key={anime.id}
-                className="bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="group"
               >
-                {/* Anime Image */}
-                <div className="relative aspect-[3/4] bg-gradient-to-br from-purple-400 to-pink-400 overflow-hidden">
+                {/* Compact Anime Tile */}
+                <div className="relative aspect-[2/3] bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
                   <Image
                     src={anime.imageUrl}
                     alt={anime.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={index < 4}
-                    loading={index < 4 ? 'eager' : 'lazy'}
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
+                    priority={index < 6}
+                    loading={index < 6 ? 'eager' : 'lazy'}
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
                   />
                   {/* Rating Badge */}
                   {anime.rating > 0 && (
-                    <div className="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-md font-semibold text-sm shadow-lg">
+                    <div className="absolute top-1 right-1 bg-yellow-500 text-white px-1.5 py-0.5 rounded text-xs font-bold shadow-lg">
                       ⭐ {anime.rating.toFixed(1)}
                     </div>
                   )}
                 </div>
 
-                <div className="p-4">
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 line-clamp-2 min-h-[3.5rem]">
+                {/* Title and Info Below */}
+                <div className="mt-2">
+                  <h3 className="text-sm font-semibold text-gray-800 dark:text-white line-clamp-2 mb-1">
                     {anime.title}
                   </h3>
 
-                  {/* Year and Episodes */}
-                  <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    {anime.year > 0 && <span>{anime.year}</span>}
-                    {anime.episodes > 0 && (
-                      <>
-                        <span>•</span>
-                        <span>{anime.episodes} {tAnime('episodes')}</span>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Genres */}
-                  {anime.genres.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mb-3">
-                      {anime.genres.slice(0, 3).map((genre) => (
-                        <span
-                          key={genre}
-                          className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs"
-                        >
-                          {genre}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
                   {/* Streaming Platforms */}
-                  <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 font-semibold">
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold text-gray-600 dark:text-gray-400">
                       {tAnime('availableOn')}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {anime.streamingPlatforms.slice(0, 3).map((platform) => (
-                        <span
+                    <div className="flex flex-col gap-0.5">
+                      {anime.streamingPlatforms.slice(0, 4).map((platform) => (
+                        <div
                           key={platform.name}
-                          className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200 rounded-full text-xs font-medium"
+                          className="text-xs text-purple-600 dark:text-purple-400 font-medium"
                         >
-                          {platform.name}
-                        </span>
+                          • {platform.name}
+                        </div>
                       ))}
-                      {anime.streamingPlatforms.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full text-xs">
-                          +{anime.streamingPlatforms.length - 3} more
-                        </span>
+                      {anime.streamingPlatforms.length > 4 && (
+                        <div className="text-xs text-gray-500 dark:text-gray-500">
+                          +{anime.streamingPlatforms.length - 4} more
+                        </div>
                       )}
                     </div>
                   </div>
-
-                  {/* Languages */}
-                  {anime.languages.length > 0 && (
-                    <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {tAnime('languages')} {anime.languages.slice(0, 3).join(', ')}
-                        {anime.languages.length > 3 && ` +${anime.languages.length - 3}`}
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

@@ -109,11 +109,23 @@ async function searchJikanAPI(query: string): Promise<AnimeSearchResult> {
 
     const data: JikanResponse = await response.json();
 
-    // Filter to only show main anime titles (excludes individual episodes, music videos, etc.)
+    // Filter to only show main anime titles (excludes individual episodes, music videos, seasons)
     const allowedTypes = ['TV', 'Movie', 'OVA', 'Special', 'ONA'];
-    const filteredData = data.data.filter(anime =>
-      allowedTypes.includes(anime.type || '')
-    );
+    const filteredData = data.data.filter(anime => {
+      if (!allowedTypes.includes(anime.type || '')) return false;
+
+      // Exclude season-specific entries (e.g., "Season 2", "Part 2", "2nd Season")
+      const title = anime.title.toLowerCase();
+      const seasonPatterns = [
+        /season \d+/i,
+        /\d+(st|nd|rd|th) season/i,
+        /part \d+/i,
+        /cour \d+/i,
+        /: \d+/,  // e.g., "Title: 2"
+      ];
+
+      return !seasonPatterns.some(pattern => pattern.test(title));
+    });
 
     // Transform and limit to 12 results
     const transformedData = filteredData
