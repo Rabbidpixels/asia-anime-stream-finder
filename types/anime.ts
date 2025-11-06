@@ -30,6 +30,7 @@ export interface JikanAnime {
   mal_id: number;
   title: string;
   title_japanese?: string;
+  type?: string; // TV, Movie, OVA, Special, ONA, Music
   images: {
     jpg: {
       image_url: string;

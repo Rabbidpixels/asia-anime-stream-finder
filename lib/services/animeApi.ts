@@ -98,8 +98,8 @@ function generatePlaceholderPlatforms(title: string): StreamingPlatform[] {
 async function searchJikanAPI(query: string): Promise<AnimeSearchResult> {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_JIKAN_API_URL || 'https://api.jikan.moe/v4';
-    // Filter to only show main anime titles (TV, Movie, OVA, Special, ONA) - excludes individual episodes
-    const url = `${apiUrl}/anime?q=${encodeURIComponent(query)}&type=tv,movie,ova,special,ona&limit=12&sfw=true`;
+    // Get more results to account for filtering
+    const url = `${apiUrl}/anime?q=${encodeURIComponent(query)}&limit=25&sfw=true`;
 
     const response = await rateLimitedFetch(url);
 
@@ -109,12 +109,21 @@ async function searchJikanAPI(query: string): Promise<AnimeSearchResult> {
 
     const data: JikanResponse = await response.json();
 
-    const transformedData = data.data.map(transformJikanAnime);
+    // Filter to only show main anime titles (excludes individual episodes, music videos, etc.)
+    const allowedTypes = ['TV', 'Movie', 'OVA', 'Special', 'ONA'];
+    const filteredData = data.data.filter(anime =>
+      allowedTypes.includes(anime.type || '')
+    );
+
+    // Transform and limit to 12 results
+    const transformedData = filteredData
+      .slice(0, 12)
+      .map(transformJikanAnime);
 
     return {
       data: transformedData,
-      total: data.pagination.items.total,
-      hasMore: data.pagination.has_next_page,
+      total: filteredData.length,
+      hasMore: filteredData.length > 12,
     };
   } catch (error) {
     console.error('Jikan API search failed:', error);
