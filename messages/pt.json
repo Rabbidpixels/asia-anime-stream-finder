@@ -32,6 +32,8 @@
     "rating": "Avaliação"
   },
   "footer": {
-    "copyright": "Site criado por Rabbid Pixel LLC © 2025"
+    "copyright": "Site criado por Rabbid Pixel LLC © 2025",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
   }
 }

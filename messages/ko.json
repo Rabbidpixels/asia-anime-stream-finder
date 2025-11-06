@@ -32,6 +32,8 @@
     "rating": "평점"
   },
   "footer": {
-    "copyright": "사이트 제작: Rabbid Pixel LLC © 2025"
+    "copyright": "사이트 제작: Rabbid Pixel LLC © 2025",
+    "privacy": "개인정보 보호정책",
+    "terms": "이용약관"
   }
 }

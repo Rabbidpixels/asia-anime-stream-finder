@@ -1,4 +1,18 @@
-import AnalyticsDashboard from '@/components/admin/AnalyticsDashboard';
+'use client';
+
+import dynamic from 'next/dynamic';
+
+const AnalyticsDashboard = dynamic(
+  () => import('@/components/admin/AnalyticsDashboard'),
+  {
+    loading: () => (
+      <div className="flex items-center justify-center py-12">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-purple-600"></div>
+      </div>
+    ),
+    ssr: false,
+  }
+);
 
 export default function AdminPage() {
   return (

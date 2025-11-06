@@ -32,6 +32,8 @@
     "rating": "評価"
   },
   "footer": {
-    "copyright": "サイト作成: Rabbid Pixel LLC © 2025"
+    "copyright": "サイト作成: Rabbid Pixel LLC © 2025",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
   }
 }

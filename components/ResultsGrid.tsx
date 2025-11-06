@@ -46,7 +46,7 @@ export default function ResultsGrid({
         {/* Results Grid */}
         {!loading && !error && results.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {results.map((anime) => (
+            {results.map((anime, index) => (
               <div
                 key={anime.id}
                 className="bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
@@ -59,6 +59,10 @@ export default function ResultsGrid({
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index < 4}
+                    loading={index < 4 ? 'eager' : 'lazy'}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
                   />
                   {/* Rating Badge */}
                   {anime.rating > 0 && (
