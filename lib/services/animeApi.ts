@@ -111,11 +111,19 @@ async function searchJikanAPI(query: string): Promise<AnimeSearchResult> {
 
     // Filter to only show main anime titles (excludes individual episodes, music videos, seasons)
     const allowedTypes = ['TV', 'Movie', 'OVA', 'Special', 'ONA'];
+    const queryLower = query.toLowerCase();
+
     const filteredData = data.data.filter(anime => {
       if (!allowedTypes.includes(anime.type || '')) return false;
 
-      // Exclude season-specific entries (e.g., "Season 2", "Part 2", "2nd Season")
       const title = anime.title.toLowerCase();
+      const japaneseTitle = (anime.title_japanese || '').toLowerCase();
+
+      // Only include if the FULL search query is in the title (exact phrase match)
+      const hasExactMatch = title.includes(queryLower) || japaneseTitle.includes(queryLower);
+      if (!hasExactMatch) return false;
+
+      // Exclude season-specific entries (e.g., "Season 2", "Part 2", "2nd Season")
       const seasonPatterns = [
         /season \d+/i,
         /\d+(st|nd|rd|th) season/i,
@@ -147,11 +155,11 @@ async function searchJikanAPI(query: string): Promise<AnimeSearchResult> {
 function searchFallbackData(query: string): AnimeSearchResult {
   const lowercaseQuery = query.toLowerCase();
 
+  // Only match if the FULL search query is in the title (exact phrase match)
   const filteredAnime = fallbackData.anime.filter(
     (anime) =>
       anime.title.toLowerCase().includes(lowercaseQuery) ||
-      anime.titleJapanese?.toLowerCase().includes(lowercaseQuery) ||
-      anime.genres.some((genre) => genre.toLowerCase().includes(lowercaseQuery))
+      anime.titleJapanese?.toLowerCase().includes(lowercaseQuery)
   );
 
   return {
