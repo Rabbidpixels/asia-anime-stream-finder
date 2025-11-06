@@ -1,149 +1,295 @@
-# Asia Anime Stream Finder
+# 🎬 Asia Anime Stream Finder
 
-A modern web application built with Next.js and Tailwind CSS to help users find where to stream their favorite anime across multiple platforms.
+A modern, multi-language anime streaming platform finder built with Next.js 16, featuring real-time search, click analytics, and comprehensive SEO optimization.
 
-## Features
+**Live Demo:** [Coming Soon - Deploy to Vercel]
 
-- 🎨 Clean, responsive design with Tailwind CSS
-- 🌍 Multi-language support (US, Canada, UK, EU, India, Japan, Korea, Brazil, China)
-- 🔍 Real-time anime search with Jikan API integration
-- 📊 Display anime info: title, image, rating, genres, streaming platforms, languages
-- ⚡ Loading and error states for better UX
-- 💾 Fallback to local JSON data when API is unavailable
-- 📱 Mobile-friendly interface
-- 🎭 Dark mode support
-- 👨‍💼 Admin panel (in development)
-- 🔌 Extensible API architecture for future integrations
+## ✨ Features
 
-## Tech Stack
+### 🌍 Multi-Language Support
+- **7 Languages:** English, Japanese, Korean, Portuguese, Chinese, Hindi, European Union
+- **9 Flag Emojis:** 🇺🇸 🇨🇦 🇬🇧 🇪🇺 🇮🇳 🇯🇵 🇰🇷 🇧🇷 🇨🇳
+- Seamless language switching with next-intl
+- Localized content including Privacy Policy and Terms of Use
 
-- **Framework**: Next.js 16 (App Router)
-- **Styling**: Tailwind CSS
-- **Language**: TypeScript
-- **Package Manager**: npm
-- **API**: Jikan API (MyAnimeList unofficial API)
-- **Data Fallback**: Local JSON file
+### 🔍 Smart Search
+- **Jikan API Integration:** Real-time anime database from MyAnimeList
+- **Automatic Fallback:** Local JSON data when API is unavailable
+- **Rate Limiting:** Respects API limits (1 req/sec)
+- Loading states, error handling, and empty states
+- Display anime title, image, rating, genres, streaming platforms
 
-## Project Structure
+### 📊 Analytics Dashboard
+- **Click Tracking:** Monitor affiliate links, ads, and streaming platform clicks
+- **Visual Charts:** Line charts, bar charts, and pie charts using Recharts
+- **Performance Metrics:** Top performing items and click trends
+- **Manual Reset:** Clear analytics data with confirmation
+- **API Caching:** Optimized with 60s revalidation
+
+### 🚀 Performance Optimized
+- **Image Optimization:** AVIF/WebP formats with Next.js Image
+- **Font Optimization:** Inter font with next/font/google
+- **Code Splitting:** Dynamic imports for heavy components
+- **Lazy Loading:** Priority loading for above-the-fold images
+- **Package Optimization:** Optimized imports for lucide-react and recharts
+
+### 📱 SEO & Accessibility
+- **Dynamic Meta Tags:** Per-language titles, descriptions, and keywords
+- **Open Graph & Twitter Cards:** Social media preview images (1200x630)
+- **Sitemap.xml:** All locales and routes
+- **Robots.txt:** Proper crawling rules
+- **PWA Ready:** Web manifest and dynamic favicon generation
+- **Responsive Design:** Mobile-first approach with Tailwind CSS
+
+### 📄 Legal Compliance
+- **Privacy Policy:** GDPR-compliant privacy information
+- **Terms of Use:** Clear terms and conditions
+- **Markdown-Based:** Easy to edit and maintain
+- **Multi-Language:** Available in all 7 languages
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16 (App Router with Turbopack)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + @tailwindcss/typography
+- **Internationalization:** next-intl
+- **Charts:** Recharts
+- **API:** Jikan API (MyAnimeList)
+- **Markdown:** react-markdown
+- **Deployment:** Vercel
+- **Version Control:** Git & GitHub
+
+## 📁 Project Structure
 
 ```
 animestreamfinder/
 ├── app/
-│   ├── admin/              # Admin panel pages
-│   ├── [locale]/           # Language-specific routes (prepared)
-│   ├── layout.tsx          # Root layout with header/footer
-│   ├── page.tsx            # Homepage
-│   └── globals.css         # Global styles with Tailwind
+│   ├── [locale]/              # Localized routes
+│   │   ├── admin/             # Analytics dashboard
+│   │   ├── privacy/           # Privacy policy page
+│   │   ├── terms/             # Terms of use page
+│   │   ├── layout.tsx         # Locale-specific layout with metadata
+│   │   └── page.tsx           # Homepage with search
+│   ├── api/
+│   │   └── analytics/         # Analytics API routes
+│   ├── apple-icon.tsx         # Dynamic Apple icon
+│   ├── icon.tsx               # Dynamic favicon
+│   ├── opengraph-image.tsx    # Social preview image
+│   ├── robots.ts              # Robots.txt generation
+│   ├── sitemap.ts             # Sitemap generation
+│   ├── layout.tsx             # Root layout with fonts
+│   └── globals.css            # Global styles
 ├── components/
-│   ├── Header.tsx          # Header with language selector
-│   ├── Banner.tsx          # Hero banner
-│   ├── SearchArea.tsx      # Search input component
-│   ├── ResultsGrid.tsx     # Results display grid
-│   ├── AnimeSearch.tsx     # Search state management
-│   └── Footer.tsx          # Footer with copyright
-├── lib/
-│   ├── services/           # API and service layer
-│   │   ├── animeApi.ts     # Anime API integration
-│   │   └── apiConfig.ts    # API configuration manager
-│   └── i18n/               # Internationalization setup
-│       ├── config.ts       # Locale configuration
-│       └── translations/   # Translation files
-├── types/
-│   └── anime.ts            # TypeScript type definitions
+│   ├── admin/                 # Admin dashboard components
+│   ├── AnimeSearch.tsx        # Search container
+│   ├── Banner.tsx             # Hero banner
+│   ├── Footer.tsx             # Footer with policy links
+│   ├── Header.tsx             # Header with language flags
+│   ├── ResultsGrid.tsx        # Anime results display
+│   ├── SearchArea.tsx         # Search input
+│   └── TrackableLink.tsx      # Click tracking wrapper
 ├── data/
-│   └── fallback-anime.json # Local fallback anime data
-└── public/                 # Static assets
+│   ├── fallback-anime.json    # Fallback anime data
+│   └── legal/                 # Legal content (markdown)
+├── lib/
+│   ├── analytics/             # Analytics service
+│   ├── i18n/                  # i18n configuration
+│   ├── legal/                 # Legal content service
+│   └── services/              # API services
+├── messages/                  # Translation files (en, ja, ko, pt, zh, hi, eu)
+├── public/                    # Static assets
+├── types/                     # TypeScript type definitions
+├── .env.local.example         # Environment variable template
+├── QA-CHECKLIST.md           # Quality assurance checklist
+├── DEPLOYMENT-GUIDE.md       # Deployment instructions
+└── README.md                 # This file
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-
-- Node.js 18.17 or later
-- npm
+- Node.js 18+
+- npm or yarn
+- Git
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Rabbidpixels/asia-anime-stream-finder.git
-cd asia-anime-stream-finder
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Rabbidpixels/asia-anime-stream-finder.git
+   cd asia-anime-stream-finder
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Create environment file** (optional)
+   ```bash
+   cp .env.local.example .env.local
+   ```
+
+4. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open in browser**
+   ```
+   http://localhost:3000/en
+   ```
+
+## 📝 Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```env
+# Base URL for production (set in Vercel for production)
+NEXT_PUBLIC_BASE_URL=https://your-domain.com
+
+# Force fallback mode (optional, for testing)
+# NEXT_PUBLIC_USE_FALLBACK_DATA=true
+
+# API Configuration (optional)
+# NEXT_PUBLIC_JIKAN_API_URL=https://api.jikan.moe/v4
 ```
 
-2. Install dependencies:
+## 📦 Available Scripts
+
 ```bash
-npm install
+# Development
+npm run dev          # Start dev server with Turbopack
+
+# Production
+npm run build        # Build for production
+npm start            # Start production server
+
+# Linting
+npm run lint         # Run ESLint
 ```
 
-3. Set up environment variables:
+## 🌐 Language Routes
+
+- **English:** `/en` (Default) - 🇺🇸 🇨🇦 🇬🇧
+- **European Union:** `/eu` - 🇪🇺
+- **Hindi:** `/hi` - 🇮🇳
+- **Japanese:** `/ja` - 🇯🇵
+- **Korean:** `/ko` - 🇰🇷
+- **Portuguese:** `/pt` - 🇧🇷
+- **Chinese:** `/zh` - 🇨🇳
+
+## 📊 Admin Panel
+
+Access the analytics dashboard at: `/[locale]/admin`
+
+Example: `http://localhost:3000/en/admin`
+
+### Features:
+- Click tracking statistics
+- Visual charts (line, bar, pie)
+- Top performing items
+- Click trend over time
+- Manual data reset
+
+## 🚀 Deployment
+
+See [DEPLOYMENT-GUIDE.md](./DEPLOYMENT-GUIDE.md) for detailed deployment instructions.
+
+### Quick Deploy to Vercel
+
+**Option 1: GitHub Integration (Recommended)**
+1. Go to https://vercel.com/new
+2. Import `Rabbidpixels/asia-anime-stream-finder`
+3. Click Deploy
+
+**Option 2: Vercel CLI**
 ```bash
-cp .env.example .env.local
+vercel login
+vercel --prod
 ```
-The default configuration uses the free Jikan API (no API key required). You can customize settings in `.env.local`:
-- `NEXT_PUBLIC_JIKAN_API_URL`: Jikan API endpoint (default: https://api.jikan.moe/v4)
-- `NEXT_PUBLIC_USE_FALLBACK_DATA`: Set to `true` to use local JSON instead of API
 
-4. Run the development server:
+## 🧪 Testing
+
+### Production Build
 ```bash
-npm run dev
+npm run build
+npm start
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+### Test Language Routes
+- http://localhost:3000/en
+- http://localhost:3000/ja
+- http://localhost:3000/ko
+- http://localhost:3000/pt
+- http://localhost:3000/zh
+- http://localhost:3000/hi
+- http://localhost:3000/eu
 
-## Available Scripts
+### Test API Fallback
+Enable fallback mode in `.env.local`:
+```env
+NEXT_PUBLIC_USE_FALLBACK_DATA=true
+```
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Start production server
-- `npm run lint` - Run ESLint
+## 📋 Features Checklist
 
-## API Integration
+- ✅ Multi-language support (7 languages)
+- ✅ Real-time anime search with Jikan API
+- ✅ Automatic API fallback system
+- ✅ Click analytics dashboard
+- ✅ SEO optimization (meta tags, sitemap, robots.txt)
+- ✅ Performance optimization (images, fonts, code splitting)
+- ✅ Privacy Policy and Terms pages
+- ✅ Responsive design
+- ✅ Dark mode support
+- ✅ Production build passing
+- ✅ Deployment ready
 
-The application uses a flexible API architecture that supports multiple data sources:
+## 🎯 Roadmap
 
-### Primary API: Jikan API
-- **Free** unofficial MyAnimeList API
-- **No API key required**
-- Rate limit: 1 request per second (automatically handled)
-- Documentation: https://docs.api.jikan.moe/
+### Completed
+- ✅ Multi-language routing and translations
+- ✅ Anime search with API integration
+- ✅ Analytics dashboard with charts
+- ✅ SEO optimization
+- ✅ Legal pages (Privacy & Terms)
+- ✅ Performance optimizations
 
-### Fallback System
-If the API is unavailable, the app automatically falls back to local JSON data containing popular anime titles.
+### Planned Features
+- [ ] Banner content editor in Admin Panel
+- [ ] Ad management interface
+- [ ] Database integration for analytics persistence
+- [ ] User authentication for admin access
+- [ ] Advanced filtering and sorting
+- [ ] Streaming availability by region
+- [ ] User favorites and watchlist
+- [ ] Email notifications for new anime
 
-### Adding Custom APIs
-The architecture is designed for extensibility. Future APIs can be added through:
-1. Update `lib/services/apiConfig.ts` to add new API configurations
-2. Implement API-specific transformers in `lib/services/animeApi.ts`
-3. Configure through the Admin Panel (coming soon)
+## 📄 License
 
-### Supported Data Fields
-- Anime title (English & Japanese)
-- Cover image
-- Rating/score
-- Episode count
-- Genres
-- Streaming platforms (with regional availability)
-- Available languages
-- Synopsis
+Created by **Rabbid Pixel LLC © 2025**
 
-## Roadmap
+## 🤝 Contributing
 
-- [x] Implement anime search API integration with Jikan
-- [x] Add loading and error states
-- [x] Create fallback data system
-- [ ] Complete multi-language routing
-- [ ] Build admin panel functionality for API management
-- [ ] Add user authentication
-- [ ] Implement favorites/watchlist feature
-- [ ] Add streaming platform filters
-- [ ] Integrate real-time streaming availability API
-- [ ] Add pagination for search results
-- [ ] Implement anime detail pages
+This is a private project. For issues or feature requests, please contact Rabbid Pixel LLC.
 
-## License
+## 📞 Support
 
-© 2025 Rabbid Pixel LLC. All rights reserved.
+- **GitHub:** https://github.com/Rabbidpixels/asia-anime-stream-finder
+- **Issues:** https://github.com/Rabbidpixels/asia-anime-stream-finder/issues
 
-## Contributing
+## 🙏 Acknowledgments
 
-This is a private project. For inquiries, please contact Rabbid Pixel LLC.
+- **Jikan API:** Free MyAnimeList API
+- **Next.js:** React framework
+- **Vercel:** Hosting platform
+- **Tailwind CSS:** Utility-first CSS framework
+- **Recharts:** Charting library
+- **next-intl:** Internationalization library
+
+---
+
+**Built with ❤️ by Rabbid Pixel LLC**
+
+🤖 *This project was developed with assistance from [Claude Code](https://claude.com/claude-code)*
