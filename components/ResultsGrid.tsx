@@ -43,16 +43,16 @@ export default function ResultsGrid({
           </div>
         )}
 
-        {/* Results Grid - Compact Tile Layout */}
+        {/* Results Grid - Card Tiles */}
         {!loading && !error && results.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
             {results.map((anime, index) => (
               <div
                 key={anime.id}
-                className="group"
+                className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-gray-200 dark:border-gray-700"
               >
-                {/* Compact Anime Tile */}
-                <div className="relative aspect-[2/3] bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                {/* Anime Image */}
+                <div className="relative aspect-[2/3] bg-gradient-to-br from-purple-400 to-pink-400 overflow-hidden">
                   <Image
                     src={anime.imageUrl}
                     alt={anime.title}
@@ -66,36 +66,50 @@ export default function ResultsGrid({
                   />
                   {/* Rating Badge */}
                   {anime.rating > 0 && (
-                    <div className="absolute top-1 right-1 bg-yellow-500 text-white px-1.5 py-0.5 rounded text-xs font-bold shadow-lg">
+                    <div className="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-lg text-xs font-bold shadow-lg">
                       ⭐ {anime.rating.toFixed(1)}
                     </div>
                   )}
                 </div>
 
-                {/* Title and Info Below */}
-                <div className="mt-2">
-                  <h3 className="text-sm font-semibold text-gray-800 dark:text-white line-clamp-2 mb-1">
+                {/* Info Section Below Image */}
+                <div className="p-3">
+                  {/* Title */}
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 min-h-[2.5rem]">
                     {anime.title}
                   </h3>
 
-                  {/* Streaming Platforms */}
-                  <div className="space-y-1">
-                    <p className="text-xs font-semibold text-gray-600 dark:text-gray-400">
-                      {tAnime('availableOn')}
+                  {/* Streaming Platforms as Icon Badges */}
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+                      Stream on:
                     </p>
-                    <div className="flex flex-col gap-0.5">
-                      {anime.streamingPlatforms.slice(0, 4).map((platform) => (
-                        <div
-                          key={platform.name}
-                          className="text-xs text-purple-600 dark:text-purple-400 font-medium"
-                        >
-                          • {platform.name}
-                        </div>
-                      ))}
+                    <div className="flex flex-wrap gap-1.5">
+                      {anime.streamingPlatforms.slice(0, 4).map((platform) => {
+                        // Platform-specific colors
+                        const platformColors: Record<string, string> = {
+                          'Crunchyroll': 'bg-orange-500 hover:bg-orange-600',
+                          'Netflix': 'bg-red-600 hover:bg-red-700',
+                          'Hulu': 'bg-green-500 hover:bg-green-600',
+                          'Funimation': 'bg-purple-600 hover:bg-purple-700',
+                          'Disney+': 'bg-blue-600 hover:bg-blue-700',
+                        };
+                        const colorClass = platformColors[platform.name] || 'bg-gray-600 hover:bg-gray-700';
+
+                        return (
+                          <span
+                            key={platform.name}
+                            className={`${colorClass} text-white px-2 py-1 rounded-md text-xs font-semibold transition-colors duration-200 cursor-pointer shadow-sm`}
+                            title={platform.name}
+                          >
+                            {platform.name}
+                          </span>
+                        );
+                      })}
                       {anime.streamingPlatforms.length > 4 && (
-                        <div className="text-xs text-gray-500 dark:text-gray-500">
-                          +{anime.streamingPlatforms.length - 4} more
-                        </div>
+                        <span className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md text-xs font-semibold">
+                          +{anime.streamingPlatforms.length - 4}
+                        </span>
                       )}
                     </div>
                   </div>
