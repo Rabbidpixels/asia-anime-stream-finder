@@ -1,0 +1,22 @@
+{
+  "common": {
+    "siteName": "Asia Anime Stream Finder",
+    "search": "Search",
+    "searchPlaceholder": "Search for anime titles..."
+  },
+  "banner": {
+    "title": "Find Your Favorite Anime Streams",
+    "subtitle": "Discover where to watch anime across multiple streaming platforms"
+  },
+  "results": {
+    "title": "Search Results",
+    "noResults": "Use the search above to find anime streaming information"
+  },
+  "footer": {
+    "copyright": "Site created by Rabbid Pixel LLC © 2025"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "description": "Admin panel functionality will be implemented here."
+  }
+}
