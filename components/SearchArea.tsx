@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface SearchAreaProps {
   onSearch: (query: string) => void;
@@ -8,6 +9,7 @@ interface SearchAreaProps {
 }
 
 export default function SearchArea({ onSearch, loading = false }: SearchAreaProps) {
+  const t = useTranslations('search');
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
@@ -23,7 +25,7 @@ export default function SearchArea({ onSearch, loading = false }: SearchAreaProp
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search for anime titles..."
+            placeholder={t('placeholder')}
             disabled={loading}
             className="flex-1 px-6 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-purple-600 dark:focus:border-purple-400 dark:bg-gray-800 dark:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           />
@@ -32,7 +34,7 @@ export default function SearchArea({ onSearch, loading = false }: SearchAreaProp
             disabled={loading}
             className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-purple-600"
           >
-            {loading ? 'Searching...' : 'Search'}
+            {loading ? t('searching') : t('button')}
           </button>
         </form>
       </div>

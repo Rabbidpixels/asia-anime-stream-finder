@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "Asia Anime Stream Finder",
+    "title": "Asia Anime Stream Finder",
+    "description": "Find where to stream your favorite anime across multiple platforms"
+  },
+  "header": {
+    "title": "Asia Anime Stream Finder"
+  },
+  "banner": {
+    "title": "Find Your Favorite Anime Streams",
+    "subtitle": "Discover where to watch anime across multiple streaming platforms"
+  },
+  "search": {
+    "placeholder": "Search for anime titles...",
+    "button": "Search",
+    "searching": "Searching...",
+    "resultsTitle": "Search Results",
+    "noResults": "No anime found matching your search. Try a different query.",
+    "emptyStateTitle": "Start Your Anime Search",
+    "emptyStateSubtitle": "Use the search above to find anime streaming information",
+    "noResultsTitle": "No Results Found",
+    "noResultsSubtitle": "Try searching with different keywords",
+    "loading": "Searching for anime...",
+    "error": "Failed to search anime. Please try again later.",
+    "errorTitle": "Error"
+  },
+  "anime": {
+    "episodes": "ep",
+    "availableOn": "Available on:",
+    "languages": "Languages:",
+    "rating": "Rating"
+  },
+  "footer": {
+    "copyright": "Site created by Rabbid Pixel LLC © 2025"
+  }
+}

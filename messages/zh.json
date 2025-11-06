@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "亚洲动漫流媒体查找器",
+    "title": "亚洲动漫流媒体查找器",
+    "description": "在多个平台上查找观看您最喜爱的动漫"
+  },
+  "header": {
+    "title": "亚洲动漫流媒体查找器"
+  },
+  "banner": {
+    "title": "查找您最喜爱的动漫流媒体",
+    "subtitle": "发现在多个流媒体平台上观看动漫的地方"
+  },
+  "search": {
+    "placeholder": "搜索动漫标题...",
+    "button": "搜索",
+    "searching": "搜索中...",
+    "resultsTitle": "搜索结果",
+    "noResults": "未找到与您的搜索匹配的动漫。请尝试不同的查询。",
+    "emptyStateTitle": "开始您的动漫搜索",
+    "emptyStateSubtitle": "使用上方的搜索查找动漫流媒体信息",
+    "noResultsTitle": "未找到结果",
+    "noResultsSubtitle": "尝试使用不同的关键词搜索",
+    "loading": "正在搜索动漫...",
+    "error": "搜索动漫失败。请稍后再试。",
+    "errorTitle": "错误"
+  },
+  "anime": {
+    "episodes": "集",
+    "availableOn": "可在以下平台观看:",
+    "languages": "语言:",
+    "rating": "评分"
+  },
+  "footer": {
+    "copyright": "网站创建者: Rabbid Pixel LLC © 2025"
+  }
+}

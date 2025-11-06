@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "アジア アニメ ストリーム ファインダー",
+    "title": "アジア アニメ ストリーム ファインダー",
+    "description": "複数のプラットフォームでお気に入りのアニメを視聴できる場所を見つける"
+  },
+  "header": {
+    "title": "アジア アニメ ストリーム ファインダー"
+  },
+  "banner": {
+    "title": "お気に入りのアニメストリームを見つける",
+    "subtitle": "複数のストリーミングプラットフォームでアニメを視聴できる場所を発見"
+  },
+  "search": {
+    "placeholder": "アニメのタイトルを検索...",
+    "button": "検索",
+    "searching": "検索中...",
+    "resultsTitle": "検索結果",
+    "noResults": "検索に一致するアニメが見つかりませんでした。別のクエリを試してください。",
+    "emptyStateTitle": "アニメ検索を開始",
+    "emptyStateSubtitle": "上記の検索を使用してアニメストリーミング情報を見つける",
+    "noResultsTitle": "結果が見つかりません",
+    "noResultsSubtitle": "別のキーワードで検索してみてください",
+    "loading": "アニメを検索中...",
+    "error": "アニメの検索に失敗しました。後でもう一度お試しください。",
+    "errorTitle": "エラー"
+  },
+  "anime": {
+    "episodes": "話",
+    "availableOn": "配信:",
+    "languages": "言語:",
+    "rating": "評価"
+  },
+  "footer": {
+    "copyright": "サイト作成: Rabbid Pixel LLC © 2025"
+  }
+}

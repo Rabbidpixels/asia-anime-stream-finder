@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "아시아 애니메이션 스트림 파인더",
+    "title": "아시아 애니메이션 스트림 파인더",
+    "description": "여러 플랫폼에서 좋아하는 애니메이션을 시청할 수 있는 곳을 찾으세요"
+  },
+  "header": {
+    "title": "아시아 애니메이션 스트림 파인더"
+  },
+  "banner": {
+    "title": "좋아하는 애니메이션 스트림 찾기",
+    "subtitle": "여러 스트리밍 플랫폼에서 애니메이션을 시청할 수 있는 곳을 발견하세요"
+  },
+  "search": {
+    "placeholder": "애니메이션 제목 검색...",
+    "button": "검색",
+    "searching": "검색 중...",
+    "resultsTitle": "검색 결과",
+    "noResults": "검색과 일치하는 애니메이션을 찾을 수 없습니다. 다른 검색어를 시도하세요.",
+    "emptyStateTitle": "애니메이션 검색 시작",
+    "emptyStateSubtitle": "위의 검색을 사용하여 애니메이션 스트리밍 정보 찾기",
+    "noResultsTitle": "결과를 찾을 수 없습니다",
+    "noResultsSubtitle": "다른 키워드로 검색해 보세요",
+    "loading": "애니메이션 검색 중...",
+    "error": "애니메이션 검색에 실패했습니다. 나중에 다시 시도하세요.",
+    "errorTitle": "오류"
+  },
+  "anime": {
+    "episodes": "화",
+    "availableOn": "시청 가능:",
+    "languages": "언어:",
+    "rating": "평점"
+  },
+  "footer": {
+    "copyright": "사이트 제작: Rabbid Pixel LLC © 2025"
+  }
+}

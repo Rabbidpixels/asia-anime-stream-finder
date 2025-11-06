@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "Localizador de Streaming de Anime da Ásia",
+    "title": "Localizador de Streaming de Anime da Ásia",
+    "description": "Encontre onde assistir seus animes favoritos em várias plataformas"
+  },
+  "header": {
+    "title": "Localizador de Streaming de Anime da Ásia"
+  },
+  "banner": {
+    "title": "Encontre Seus Streams de Anime Favoritos",
+    "subtitle": "Descubra onde assistir anime em várias plataformas de streaming"
+  },
+  "search": {
+    "placeholder": "Pesquisar títulos de anime...",
+    "button": "Pesquisar",
+    "searching": "Pesquisando...",
+    "resultsTitle": "Resultados da Pesquisa",
+    "noResults": "Nenhum anime encontrado correspondente à sua pesquisa. Tente uma consulta diferente.",
+    "emptyStateTitle": "Comece Sua Pesquisa de Anime",
+    "emptyStateSubtitle": "Use a pesquisa acima para encontrar informações de streaming de anime",
+    "noResultsTitle": "Nenhum Resultado Encontrado",
+    "noResultsSubtitle": "Tente pesquisar com palavras-chave diferentes",
+    "loading": "Procurando por anime...",
+    "error": "Falha ao pesquisar anime. Por favor, tente novamente mais tarde.",
+    "errorTitle": "Erro"
+  },
+  "anime": {
+    "episodes": "ep",
+    "availableOn": "Disponível em:",
+    "languages": "Idiomas:",
+    "rating": "Avaliação"
+  },
+  "footer": {
+    "copyright": "Site criado por Rabbid Pixel LLC © 2025"
+  }
+}

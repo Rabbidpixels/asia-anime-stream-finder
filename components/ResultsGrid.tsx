@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import type { Anime } from '@/types/anime';
 
 interface ResultsGridProps {
@@ -14,25 +17,28 @@ export default function ResultsGrid({
   error = null,
   hasSearched = false,
 }: ResultsGridProps) {
+  const t = useTranslations('search');
+  const tAnime = useTranslations('anime');
+
   return (
     <section className="bg-gray-50 dark:bg-gray-800 py-8 md:py-12 min-h-[400px]">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">
-          Search Results
+          {t('resultsTitle')}
         </h2>
 
         {/* Loading State */}
         {loading && (
           <div className="flex flex-col items-center justify-center py-12">
             <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-purple-600"></div>
-            <p className="mt-4 text-gray-600 dark:text-gray-400">Searching for anime...</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">{t('loading')}</p>
           </div>
         )}
 
         {/* Error State */}
         {error && !loading && (
           <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-400 px-6 py-4 rounded-lg max-w-2xl mx-auto">
-            <p className="font-semibold">Error</p>
+            <p className="font-semibold">{t('errorTitle')}</p>
             <p>{error}</p>
           </div>
         )}
@@ -74,7 +80,7 @@ export default function ResultsGrid({
                     {anime.episodes > 0 && (
                       <>
                         <span>•</span>
-                        <span>{anime.episodes} ep</span>
+                        <span>{anime.episodes} {tAnime('episodes')}</span>
                       </>
                     )}
                   </div>
@@ -96,7 +102,7 @@ export default function ResultsGrid({
                   {/* Streaming Platforms */}
                   <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
                     <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 font-semibold">
-                      Available on:
+                      {tAnime('availableOn')}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {anime.streamingPlatforms.slice(0, 3).map((platform) => (
@@ -119,7 +125,7 @@ export default function ResultsGrid({
                   {anime.languages.length > 0 && (
                     <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
                       <p className="text-xs text-gray-500 dark:text-gray-400">
-                        Languages: {anime.languages.slice(0, 3).join(', ')}
+                        {tAnime('languages')} {anime.languages.slice(0, 3).join(', ')}
                         {anime.languages.length > 3 && ` +${anime.languages.length - 3}`}
                       </p>
                     </div>
@@ -134,8 +140,8 @@ export default function ResultsGrid({
         {!loading && !error && !hasSearched && (
           <div className="text-center py-12 text-gray-600 dark:text-gray-400">
             <div className="text-6xl mb-4">🔍</div>
-            <p className="text-xl font-semibold mb-2">Start Your Anime Search</p>
-            <p>Use the search above to find anime streaming information</p>
+            <p className="text-xl font-semibold mb-2">{t('emptyStateTitle')}</p>
+            <p>{t('emptyStateSubtitle')}</p>
           </div>
         )}
 
@@ -143,8 +149,8 @@ export default function ResultsGrid({
         {!loading && !error && hasSearched && results.length === 0 && (
           <div className="text-center py-12 text-gray-600 dark:text-gray-400">
             <div className="text-6xl mb-4">😢</div>
-            <p className="text-xl font-semibold mb-2">No Results Found</p>
-            <p>Try searching with different keywords</p>
+            <p className="text-xl font-semibold mb-2">{t('noResultsTitle')}</p>
+            <p>{t('noResultsSubtitle')}</p>
           </div>
         )}
       </div>
